@@ -6,6 +6,8 @@ import ca.ntro.app.frontend.ViewRegistrarFx;
 import ca.ntro.app.frontend.events.EventRegistrar;
 import ca.ntro.app.services.Window;
 import ca.ntro.app.tasks.frontend.FrontendTasks;
+import pong.frontal.taches.Initialisation;
+import pong.frontal.vues.VueRacine;
 
 public class FrontalPong implements FrontendFx {
 
@@ -21,6 +23,8 @@ public class FrontalPong implements FrontendFx {
 			Window window = inputs.get(window());
 			
 			window.show();
+			
+			Initialisation.creerTaches(tasks);
 		});
 	}
 
@@ -40,6 +44,9 @@ public class FrontalPong implements FrontendFx {
 	public void registerViews(ViewRegistrarFx registrar) {
 		// TODO Auto-generated method stub
 		
+		registrar.registerView(VueRacine.class, "/racine.xml");
+		registrar.registerView(VueRacine.class, "/file_attente.xml");
+
 	}
 
 }

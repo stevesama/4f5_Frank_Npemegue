@@ -6,7 +6,9 @@
 <?import javafx.scene.image.Image?>
 
 <VBox xmlns:fx="http://javafx.com/fxml"
-    fx:controller="pong.frontal.vues.VueFileAttente">
+    fx:controller="echecs.frontal.vues.VueFileAttente"
+    styleClass="conteneur"
+    id="vue-file-attente">
 
     <ImageView>
          <image>
@@ -14,7 +16,10 @@
          </image>
     </ImageView>
 
-    <button text="Ouvrir partie">
-    </button>
+    <Button 
+        text="%retourMenu"
+        styleClass="gros-bouton"
+        id="bouton-ouvrir-partie">
+    </Button>
 
 </VBox>

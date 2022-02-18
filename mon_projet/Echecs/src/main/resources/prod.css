@@ -29,3 +29,9 @@
 .gros-bouton:hover {
 	-fx-cursor: hand;
 }
+
+#text {
+	-fx-font-size: 4em;
+	-fx-text-align: center;
+}
+

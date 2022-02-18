@@ -1,6 +1,5 @@
 package pong.frontal;
 
-import static ca.ntro.app.tasks.frontend.FrontendTasks.*;
 import ca.ntro.app.frontend.FrontendFx;
 import ca.ntro.app.frontend.ViewRegistrarFx;
 import ca.ntro.app.frontend.events.EventRegistrar;
@@ -14,18 +13,9 @@ public class FrontalPong implements FrontendFx {
 	@Override
 	public void createTasks(FrontendTasks tasks) {
 		// TODO Auto-generated method stub
-		tasks.task("afficherFenetre")
-		
-		.waitsFor(window())
-		
-		.thenExecutes(inputs -> {
-			
-			Window window = inputs.get(window());
-			
-			window.show();
 			
 			Initialisation.creerTaches(tasks);
-		});
+
 	}
 
 	@Override

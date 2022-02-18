@@ -16,7 +16,7 @@ public class Initialisation {
 		afficherFenetre(tasks);
 		
 		creerVueRacine(tasks);
-		installerVueRacine(tasks);
+		creerVueFileAttente(tasks);
 		
 		installerVueRacine(tasks);
 		installerVueFileAttente(tasks);

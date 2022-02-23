@@ -21,6 +21,7 @@ Paramètres de jeu !</Label>
     </ImageView>
 
     <Button 
+        fx:id="boutonOuvrirPartie"
         text="%retourMenu"
         styleClass="gros-bouton"
         id="bouton-ouvrir-partie">

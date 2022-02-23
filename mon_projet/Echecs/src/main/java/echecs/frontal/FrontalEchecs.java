@@ -8,8 +8,12 @@ import ca.ntro.app.frontend.ViewRegistrarFx;
 import ca.ntro.app.frontend.events.EventRegistrar;
 import ca.ntro.app.services.Window;
 import ca.ntro.app.tasks.frontend.FrontendTasks;
+import echecs.frontal.evenements.EvtAfficherFileAttente;
+import echecs.frontal.evenements.EvtAfficherPartie;
 import echecs.frontal.taches.Initialisation;
+import echecs.frontal.taches.Navigation;
 import echecs.frontal.vues.VueFileAttente;
+import echecs.frontal.vues.VuePartie;
 import echecs.frontal.vues.VueRacine;
 
 public class FrontalEchecs implements FrontendFx{
@@ -18,6 +22,7 @@ public class FrontalEchecs implements FrontendFx{
 	public void createTasks(FrontendTasks tasks) {
 		// TODO Auto-generated method stub
             Initialisation.creerTaches(tasks);
+            Navigation.creerTaches(tasks);
 	}
 
 	@Override
@@ -29,7 +34,8 @@ public class FrontalEchecs implements FrontendFx{
 	@Override
 	public void registerEvents(EventRegistrar registrar) {
 		// TODO Auto-generated method stub
-		
+		registrar.registerEvent(EvtAfficherFileAttente.class);
+		registrar.registerEvent(EvtAfficherPartie.class);
 	}
 
 	@Override
@@ -43,6 +49,8 @@ public class FrontalEchecs implements FrontendFx{
         registrar.registerDefaultResources("/chaines_fr.properties");
         
         registrar.registerResources(NtroApp.locale("en"), "/chaines_en.properties");
+        
+        registrar.registerView(VuePartie.class, "/partie.xml");
     }
 
 }

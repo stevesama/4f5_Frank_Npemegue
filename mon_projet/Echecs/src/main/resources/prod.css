@@ -1,3 +1,7 @@
+.conteneur {
+	-fx-border-width:10;
+}
+
 #vue-racine {
 	-fx-background-color:grey;
 }

@@ -1,3 +1,4 @@
+ 
 package echecs.frontal.taches;
 import static ca.ntro.app.tasks.frontend.FrontendTasks.*;
 

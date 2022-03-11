@@ -6,7 +6,7 @@ import ca.ntro.app.frontend.ViewLoader;
 import ca.ntro.app.services.Window;
 import ca.ntro.app.tasks.frontend.FrontendTasks;
 import echecs.frontal.vues.VueRacine;
-import echecs.frontal.vues.VueFileAttente;
+import echecs.frontal.vues.VueParametreDeJeu;
 
 public class Initialisation {
 
@@ -67,12 +67,12 @@ public class Initialisation {
 
         .waitsFor(created(VueRacine.class))
 
-        .waitsFor(created(VueFileAttente.class))
+        .waitsFor(created(VueParametreDeJeu.class))
 
         .thenExecutes(inputs -> {
 
             VueRacine        vueRacine       = inputs.get(created(VueRacine.class));
-            VueFileAttente   vueFileAttente  = inputs.get(created(VueFileAttente.class));
+            VueParametreDeJeu   vueFileAttente  = inputs.get(created(VueParametreDeJeu.class));
 
             vueRacine.afficherSousVue(vueFileAttente);
         });
@@ -80,15 +80,15 @@ public class Initialisation {
 
 
     private static void creerVueFileAttente(FrontendTasks tasks) {
-        tasks.task(create(VueFileAttente.class))
+        tasks.task(create(VueParametreDeJeu.class))
 
-        .waitsFor(viewLoader(VueFileAttente.class))
+        .waitsFor(viewLoader(VueParametreDeJeu.class))
 
 
         .thenExecutesAndReturnsValue(inputs -> {
 
-            ViewLoader<VueFileAttente> viewLoader = inputs.get(viewLoader(VueFileAttente.class));
-            VueFileAttente vueFileAttente = viewLoader.createView();
+            ViewLoader<VueParametreDeJeu> viewLoader = inputs.get(viewLoader(VueParametreDeJeu.class));
+            VueParametreDeJeu vueFileAttente = viewLoader.createView();
 
             return vueFileAttente;
         });

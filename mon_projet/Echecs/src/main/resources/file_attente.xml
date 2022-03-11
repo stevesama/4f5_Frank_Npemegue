@@ -7,14 +7,14 @@
 <?import javafx.scene.control.*?>
 
 <VBox xmlns:fx="http://javafx.com/fxml"
-    fx:controller="echecs.frontal.vues.VueFileAttente"
+    fx:controller="echecs.frontal.vues.VueParametreDeJeu"
     styleClass="conteneur"
     id="vue-file-attente">
 
 <Label id="text"> 
 Paramètres de jeu !</Label>
 
-    <ImageView>
+    <ImageView id="milieu">
          <image>
              <Image url="@logo.png" />
          </image>

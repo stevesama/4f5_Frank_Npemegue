@@ -42,7 +42,7 @@ public class ClientEchecs implements NtroClientFx{
 		// TODO Auto-generated method stub
 		
 		registrar.registerModel(ModeleParametreDeJeu.class);
-		
+		                                                            
 		registrar.registerValue(Parametres.class);
 		
 

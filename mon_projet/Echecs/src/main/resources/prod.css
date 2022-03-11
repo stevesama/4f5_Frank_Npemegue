@@ -1,7 +1,9 @@
 .conteneur {
 	-fx-border-width:10;
 }
-
+#milieu {
+	-fx-text-align: center;
+}
 #vue-racine {
 	-fx-background-color:grey;
 }

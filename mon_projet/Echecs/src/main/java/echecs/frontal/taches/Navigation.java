@@ -6,8 +6,8 @@ import ca.ntro.app.frontend.ViewLoader;
 import ca.ntro.app.tasks.frontend.FrontendTasks;
 import echecs.frontal.evenements.EvtAfficherFileAttente;
 import echecs.frontal.evenements.EvtAfficherPartie;
-import echecs.frontal.vues.VueFileAttente;
-import echecs.frontal.vues.VuePartie;
+import echecs.frontal.vues.VueParametreDeJeu;
+import echecs.frontal.vues.VueParametres;
 import echecs.frontal.vues.VueRacine;
 
 public class Navigation {
@@ -25,11 +25,11 @@ public class Navigation {
 	}
 	
 	private static void creerVuePartie(FrontendTasks tasks) {
-		tasks.task(create(VuePartie.class))
-			.waitsFor(viewLoader(VuePartie.class))
+		tasks.task(create(VueParametres.class))
+			.waitsFor(viewLoader(VueParametres.class))
 			.thenExecutesAndReturnsValue(inputs -> {
-				ViewLoader<VuePartie> viewLoader = inputs.get(viewLoader(VuePartie.class));
-				VuePartie vuePartie = viewLoader.createView();
+				ViewLoader<VueParametres> viewLoader = inputs.get(viewLoader(VueParametres.class));
+				VueParametres vuePartie = viewLoader.createView();
 				return vuePartie;
 			});
 	}
@@ -37,14 +37,14 @@ public class Navigation {
 	private static void afficherVuePartie(FrontendTasks tasks) {
 		tasks.task("afficherVuePartie")
 		
-			.waitsFor(created(VuePartie.class))
+			.waitsFor(created(VueParametres.class))
 			
 			.waitsFor(event(EvtAfficherPartie.class))
 			
 			.thenExecutes(inputs -> {
 				
 				VueRacine vueRacine = inputs.get(created(VueRacine.class));
-				VuePartie vuePartie = inputs.get(created(VuePartie.class));
+				VueParametres vuePartie = inputs.get(created(VueParametres.class));
 				
 				vueRacine.afficherSousVue(vuePartie);
 			});
@@ -58,7 +58,7 @@ public class Navigation {
 			.thenExecutes(inputs -> {
 				
 				VueRacine vueRacine = inputs.get(created(VueRacine.class));
-				VueFileAttente vueFileAttente = inputs.get(created(VueFileAttente.class));
+				VueParametreDeJeu vueFileAttente = inputs.get(created(VueParametreDeJeu.class));
 				
 				vueRacine.afficherSousVue(vueFileAttente);
 			});

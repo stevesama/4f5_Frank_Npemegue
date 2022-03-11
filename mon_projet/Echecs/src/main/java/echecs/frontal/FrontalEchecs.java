@@ -12,8 +12,8 @@ import echecs.frontal.evenements.EvtAfficherFileAttente;
 import echecs.frontal.evenements.EvtAfficherPartie;
 import echecs.frontal.taches.Initialisation;
 import echecs.frontal.taches.Navigation;
-import echecs.frontal.vues.VueFileAttente;
-import echecs.frontal.vues.VuePartie;
+import echecs.frontal.vues.VueParametreDeJeu;
+import echecs.frontal.vues.VueParametres;
 import echecs.frontal.vues.VueRacine;
 
 public class FrontalEchecs implements FrontendFx{
@@ -42,7 +42,7 @@ public class FrontalEchecs implements FrontendFx{
     public void registerViews(ViewRegistrarFx registrar) {
         // TODO Auto-generated method stub
         registrar.registerView(VueRacine.class, "/racine.xml");
-        registrar.registerView(VueFileAttente.class, "/file_attente.xml");
+        registrar.registerView(VueParametreDeJeu.class, "/file_attente.xml");
         //registrar.registerStylesheet("/dev.css");
         registrar.registerStylesheet("/prod.css");
         
@@ -50,7 +50,7 @@ public class FrontalEchecs implements FrontendFx{
         
         registrar.registerResources(NtroApp.locale("en"), "/chaines_en.properties");
         
-        registrar.registerView(VuePartie.class, "/partie.xml");
+        registrar.registerView(VueParametres.class, "/parametre.xml");
     }
 
 }

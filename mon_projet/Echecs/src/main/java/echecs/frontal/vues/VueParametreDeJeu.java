@@ -11,7 +11,7 @@ import echecs.frontal.evenements.EvtAfficherPartie;
 import javafx.fxml.FXML;
 
 
-public class VueFileAttente extends ViewFx {
+public class VueParametreDeJeu extends ViewFx {
 	
 	@FXML
 	private Button boutonOuvrirPartie;
@@ -32,7 +32,7 @@ public class VueFileAttente extends ViewFx {
 		
 		boutonOuvrirPartie.setOnAction(evtFx -> {
 			
-			 System.out.println("[VueFileAttente] clic:" + evtFx.getEventType());
+			 System.out.println("[VueParametreDeJeu] clic:" + evtFx.getEventType());
 			 
 			 evtNtro.trigger();
 		});

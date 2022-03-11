@@ -25,7 +25,7 @@ public class VueParametres extends ViewFx{
     private void installerEvtAfficherFileAttente() {
         EvtAfficherFileAttente evtNtro = NtroApp.newEvent(EvtAfficherFileAttente.class);
         boutonQuitterPartie.setOnAction(evtFx -> {
-            System.out.println("[VuePartie] clic: " + evtFx.getEventType());
+            System.out.println("[VueParametres] clic: " + evtFx.getEventType());
             evtNtro.trigger();
         });
     }

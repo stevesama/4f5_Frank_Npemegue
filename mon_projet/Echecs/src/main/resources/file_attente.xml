@@ -14,7 +14,7 @@
 <Label id="text"> 
 Paramètres de jeu !</Label>
 
-    <ImageView id="milieu">
+    <ImageView>
          <image>
              <Image url="@logo.png" />
          </image>

@@ -1,15 +1,14 @@
 .conteneur {
 	-fx-border-width:10;
 }
-#milieu {
-	-fx-text-align: center;
-}
+
 #vue-racine {
 	-fx-background-color:grey;
 }
 
 #vue-file-attente {
-		-fx-alignment:top-right;
+		-fx-alignment:center;
+
 }
 
 #vue-partie {
@@ -40,8 +39,5 @@
 	-fx-cursor: hand;
 }
 
-#text {
-	-fx-font-size: 4em;
-	-fx-text-align: center;
-}
+
 

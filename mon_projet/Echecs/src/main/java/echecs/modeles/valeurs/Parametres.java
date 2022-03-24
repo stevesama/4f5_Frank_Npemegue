@@ -5,7 +5,7 @@ import ca.ntro.app.models.Value;
 public class Parametres implements Value{
 	
 	private String police;
-	private String premierJoueur;
+	private String idJoueur;
 	
 	public Parametres() {
 		
@@ -19,14 +19,21 @@ public class Parametres implements Value{
 		this.police = police;
 	}
 
-	public String getPremierJoueur() {
-		return premierJoueur;
+	public String getIdJoueur() {
+		return idJoueur;
 	}
 
-	public void setPremierJoueur(String premierJoueur) {
-		this.premierJoueur = premierJoueur;
+	public void setIdJoueur(String idJoueur) {
+		this.idJoueur = idJoueur;
 	}
 
+	public Parametres(String idJoueur, String police) {
+		
+		setIdJoueur(idJoueur);
+		setPolice(police);
+	}
+	
+	
 	
 	
 

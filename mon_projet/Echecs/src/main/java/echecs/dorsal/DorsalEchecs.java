@@ -3,6 +3,7 @@ package echecs.dorsal;
 import ca.ntro.app.backend.LocalBackendNtro;
 import ca.ntro.app.tasks.backend.BackendTasks;
 import echecs.dorsal.taches.InitialiserModeles;
+import echecs.dorsal.taches.ModifierFileAttente;
 
 public class DorsalEchecs extends LocalBackendNtro{
 
@@ -11,6 +12,7 @@ public class DorsalEchecs extends LocalBackendNtro{
 		// TODO Auto-generated method stub
 		
 		InitialiserModeles.creerTaches(tasks);
+		ModifierFileAttente.creerTaches(tasks);
 	}
 
 	@Override

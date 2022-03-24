@@ -7,6 +7,7 @@ import ca.ntro.app.messages.MessageRegistrar;
 import ca.ntro.app.models.ModelRegistrar;
 import echecs.dorsal.DorsalEchecs;
 import echecs.frontal.FrontalEchecs;
+import echecs.messages.MsgAjouterPolice;
 import echecs.modeles.ModeleParametreDeJeu;
 import echecs.modeles.valeurs.Parametres;
 
@@ -35,6 +36,7 @@ public class ClientEchecs implements NtroClientFx{
 	public void registerMessages(MessageRegistrar registrar) {
 		// TODO Auto-generated method stub
 		
+		registrar.registerMessage(MsgAjouterPolice.class);
 	}
 
 	@Override

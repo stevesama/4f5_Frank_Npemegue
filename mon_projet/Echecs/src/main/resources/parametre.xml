@@ -10,10 +10,10 @@
     id="vue-partie">
 
     <Button
-        fx:id="boutonQuitterPartie"
-        text="%quitterPartie"
+        fx:id="boutonQuitterParametres"
+        text="%quitterParametre"
         styleClass="gros-bouton"
-        id="boutonQuitterPartie">
+        id="boutonQuitterParametres">
     </Button>
 
 </VBox>

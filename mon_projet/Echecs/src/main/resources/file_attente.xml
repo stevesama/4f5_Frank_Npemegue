@@ -14,17 +14,31 @@
 <Label id="text"> 
 Paramètres de jeu !</Label>
 
-    <ImageView>
-         <image>
-             <Image url="@logo.png" />
-         </image>
-    </ImageView>
+    
 
     <Button 
-        fx:id="boutonOuvrirPartie"
+        fx:id="boutonOuvrirParametres"
         text="%retourMenu"
         styleClass="gros-bouton"
-        id="bouton-ouvrir-partie">
+        id="bouton-ouvrir-parametre">
     </Button>
+
+    <Button 
+        fx:id="boutonAjouterPolice"
+        text="%ajouterPolice"
+        styleClass="gros-bouton"
+        id="boutonAjouterPolice">
+    </Button>
+
+   <Label 
+        fx:id="labelMessage"
+        styleClass="texte"
+        id="label-message"
+        text="[labelMessage]">
+    </Label>
+
+
+
+
 
 </VBox>

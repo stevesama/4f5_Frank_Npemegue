@@ -34,6 +34,10 @@ public class Parametres implements Value{
 	}
 	
 	
+	@Override
+	public String toString() {
+		return police;
+	}
 	
 	
 

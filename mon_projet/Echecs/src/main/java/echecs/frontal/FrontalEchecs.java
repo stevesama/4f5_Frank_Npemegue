@@ -10,6 +10,7 @@ import ca.ntro.app.services.Window;
 import ca.ntro.app.tasks.frontend.FrontendTasks;
 import echecs.frontal.evenements.EvtAfficherFileAttente;
 import echecs.frontal.evenements.EvtAfficherPartie;
+import echecs.frontal.taches.AfficherFileAttente;
 import echecs.frontal.taches.Initialisation;
 import echecs.frontal.taches.Navigation;
 import echecs.frontal.vues.VueParametreDeJeu;
@@ -23,6 +24,7 @@ public class FrontalEchecs implements FrontendFx{
 		// TODO Auto-generated method stub
             Initialisation.creerTaches(tasks);
             Navigation.creerTaches(tasks);
+            AfficherFileAttente.creerTaches(tasks);
 	}
 
 	@Override

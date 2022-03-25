@@ -20,6 +20,16 @@ public class ModeleParametreDeJeu implements Model{
 	}
 
 
+	public long getProchainIdJoueur() {
+		return prochainIdJoueur;
+	}
+
+
+	public void setProchainIdJoueur(long prochainIdJoueur) {
+		this.prochainIdJoueur = prochainIdJoueur;
+	}
+
+
 	public void setParametresOrdre(List<Parametres> parametresOrdre) {
 		this.parametresOrdre = parametresOrdre;
 	}
@@ -47,6 +57,26 @@ public class ModeleParametreDeJeu implements Model{
 	   public void afficherSur(VueParametreDeJeu vueParametreDeJeu) {
 		   
 		   vueParametreDeJeu.afficherMessage(this.toString());
+	   }
+	   
+	   @Override
+	   public String toString() {
+		   
+		   StringBuilder builder = new StringBuilder();
+		   int numeroJoueur = 1;
+		   
+		   for(Parametres parametres : parametresOrdre) {
+			   
+			   builder.append(numeroJoueur);
+			   builder.append(". ");
+			   builder.append(parametres.toString());
+			   builder.append("\n");
+			   
+			   numeroJoueur++;
+			   
+		   }
+		   
+		   return builder.toString();
 	   }
 
 	

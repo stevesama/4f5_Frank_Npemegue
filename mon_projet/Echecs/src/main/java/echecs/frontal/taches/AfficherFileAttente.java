@@ -22,11 +22,13 @@ public class AfficherFileAttente {
             .executes(inputs -> {
                 VueParametreDeJeu vueParametreDeJeu = inputs.get(created(VueParametreDeJeu.class));
                 Modified<ModeleParametreDeJeu> parametreDeJeu = inputs.get(modified(ModeleParametreDeJeu.class));
-
+                
+                System.out.println("bonjour");
                 ModeleParametreDeJeu ancienneFile = parametreDeJeu.previousValue();
                 ModeleParametreDeJeu fileCourante = parametreDeJeu.currentValue();
                 
                 fileCourante.afficherSur(vueParametreDeJeu);
+
             });
     }
 

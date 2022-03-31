@@ -1,6 +1,8 @@
 package echecs.modeles.valeurs;
 
+import ca.ntro.app.frontend.ViewLoader;
 import ca.ntro.app.models.Value;
+import echecs.frontal.vues.fragments.FragmentPolice;
 
 public class Parametres implements Value{
 	
@@ -38,6 +40,18 @@ public class Parametres implements Value{
 	public String toString() {
 		return police;
 	}
+
+	public FragmentPolice creerFragment(ViewLoader<FragmentPolice> viewLoaderPolice) {
+		return viewLoaderPolice.createView();	
+		
+	}
+	
+	public void afficherSur(FragmentPolice fragmentPolice) {
+		
+		fragmentPolice.afficherPolice(police);
+	}
+	
+
 	
 	
 

@@ -16,6 +16,7 @@ import echecs.frontal.taches.Navigation;
 import echecs.frontal.vues.VueParametreDeJeu;
 import echecs.frontal.vues.VueParametres;
 import echecs.frontal.vues.VueRacine;
+import echecs.frontal.vues.fragments.FragmentPolice;
 
 public class FrontalEchecs implements FrontendFx{
 
@@ -53,6 +54,10 @@ public class FrontalEchecs implements FrontendFx{
         registrar.registerResources(NtroApp.locale("en"), "/chaines_en.properties");
         
         registrar.registerView(VueParametres.class, "/parametre.xml");
+        
+        registrar.registerView(FragmentPolice.class, "/fragments/police.xml");
+
+        
     }
 
 }

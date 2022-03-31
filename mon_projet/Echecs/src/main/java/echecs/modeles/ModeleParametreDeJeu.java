@@ -1,46 +1,48 @@
 package echecs.modeles;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
+import ca.ntro.app.frontend.ViewLoader;
 import ca.ntro.app.models.Model;
 import echecs.frontal.vues.VueParametreDeJeu;
+import echecs.frontal.vues.fragments.FragmentPolice;
 import echecs.messages.MsgAjouterPolice;
 import echecs.modeles.valeurs.Parametres;
 
-public class ModeleParametreDeJeu implements Model{
-		
-	private long prochainIdJoueur = 1;
-	private List<Parametres> parametresOrdre = new ArrayList<>();
-
-
-	public List<Parametres> getParametresOrdre() {
-		return parametresOrdre;
-	}
-
-
-	public long getProchainIdJoueur() {
-		return prochainIdJoueur;
-	}
-
-
-	public void setProchainIdJoueur(long prochainIdJoueur) {
-		this.prochainIdJoueur = prochainIdJoueur;
-	}
-
-
-	public void setParametresOrdre(List<Parametres> parametresOrdre) {
-		this.parametresOrdre = parametresOrdre;
-	}
-
-
-	public ModeleParametreDeJeu() {
-		
-	}
+public class ModeleParametreDeJeu  implements Model {
 	
-	
-	 public void ajouterPolicePour(String police) {
+		
+		private long prochainIdJoueur = 1;
+		private List<Parametres> parametresOrdre = new ArrayList<>();
+
+
+		public List<Parametres> getParametresOrdre() {
+			return parametresOrdre;
+		}
+
+
+		public long getProchainIdJoueur() {
+			return prochainIdJoueur;
+		}
+
+
+		public void setProchainIdJoueur(long prochainIdJoueur) {
+			this.prochainIdJoueur = prochainIdJoueur;
+		}
+
+
+		public void setParametresOrdre(List<Parametres> parametresOrdre) {
+			this.parametresOrdre = parametresOrdre;
+		}
+
+
+		public ModeleParametreDeJeu() {
+			
+		}
+		
+		
+		public void ajouterPolicePour(String police) {
 	        String idJoueur = genererIdJoueur();
 	        Parametres parametres = new Parametres(idJoueur, police);
 	        parametresOrdre.add(parametres);
@@ -54,10 +56,21 @@ public class ModeleParametreDeJeu implements Model{
 	    }
 	    
 	   
-	   public void afficherSur(VueParametreDeJeu vueParametreDeJeu) {
+	   public void afficherSur(VueParametreDeJeu vueParametreDeJeu, 
+			   ViewLoader<FragmentPolice> viewLoaderPolice) {
 		   
-		   vueParametreDeJeu.afficherMessage(this.toString());
+		   vueParametreDeJeu.viderListePolice();
+		   
+		   for(Parametres parametres : parametresOrdre) {
+			   
+			   FragmentPolice fragmentPolice = parametres.creerFragment(viewLoaderPolice);
+			   
+			   parametres.afficherSur(fragmentPolice);
+			   
+			   vueParametreDeJeu.ajouterPolice(fragmentPolice);
+		 
 	   }
+		   }
 	   
 	   @Override
 	   public String toString() {
@@ -80,6 +93,5 @@ public class ModeleParametreDeJeu implements Model{
 	   }
 
 	
-	
-	
+
 }

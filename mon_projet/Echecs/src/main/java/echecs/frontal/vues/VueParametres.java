@@ -1,15 +1,15 @@
 package echecs.frontal.vues;
 
 import javafx.scene.control.Button;
+
+
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 import ca.ntro.app.NtroApp;
 import ca.ntro.app.views.ViewFx;
 import ca.ntro.core.initialization.Ntro;
 import echecs.frontal.evenements.EvtAfficherFileAttente;
-import echecs.messages.MsgAjouterPolice;
 import javafx.fxml.FXML;
 
 public class VueParametres extends ViewFx{
@@ -27,6 +27,7 @@ public class VueParametres extends ViewFx{
         
     }
     
+
 
 
 

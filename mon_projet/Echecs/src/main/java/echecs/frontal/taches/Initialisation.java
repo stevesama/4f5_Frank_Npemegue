@@ -7,6 +7,7 @@ import ca.ntro.app.services.Window;
 import ca.ntro.app.tasks.frontend.FrontendTasks;
 import echecs.frontal.vues.VueRacine;
 import echecs.frontal.vues.VueParametreDeJeu;
+import echecs.frontal.vues.VueParametres;
 
 public class Initialisation {
 
@@ -18,11 +19,17 @@ public class Initialisation {
 				creerVueRacine(subTasks);
 				creerVueFileAttente(subTasks);
 				
+				creerVuePartie(subTasks);
+				
 				installerVueRacine(subTasks);
 				installerVueFileAttente(subTasks);	
+				
+				
+
 			});
 		
 	}
+	
 	
 	private static void afficherFenetre(FrontendTasks tasks) {
 
@@ -37,6 +44,16 @@ public class Initialisation {
 	              window.show();
 	          });
 	    }
+	
+	private static void creerVuePartie(FrontendTasks tasks) {
+		tasks.task(create(VueParametres.class))
+			.waitsFor(viewLoader(VueParametres.class))
+			.thenExecutesAndReturnsValue(inputs -> {
+				ViewLoader<VueParametres> viewLoader = inputs.get(viewLoader(VueParametres.class));
+				VueParametres vuePartie = viewLoader.createView();
+				return vuePartie;
+			});
+	}
 	
 	private static void creerVueRacine(FrontendTasks tasks) {
 		tasks.task(create(VueRacine.class))

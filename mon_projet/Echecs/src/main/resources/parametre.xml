@@ -2,6 +2,11 @@
 
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Button?>
+<?import echecs.frontal.vues.controles.CanvasPartie?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.HBox?>
+
+
 
 
 <VBox xmlns:fx="http://javafx.com/fxml"
@@ -9,11 +14,34 @@
     styleClass="conteneur"
     id="vue-partie">
 
+    <Pane styleClass="petit-espace-vertical"/>
+
+    <HBox VBox.vgrow="ALWAYS" styleClass="conteneur">
+      
+     <Pane styleClass="petit-espace-horizontal"/>
+
+     <CanvasPartie
+         HBox.hgrow="ALWAYS"
+          fx:id="canvasPartie"
+          id="canvas-partie">
+     </CanvasPartie>
+
+
+     <Pane styleClass="petit-espace-horizontal"/>
+
+
+
+    </HBox>
+
     <Button
         fx:id="boutonQuitterParametres"
         text="%quitterParametre"
         styleClass="gros-bouton"
         id="boutonQuitterParametres">
     </Button>
+
+
+    <Pane styleClass="petit-espace-vertical"/>
+
 
 </VBox>

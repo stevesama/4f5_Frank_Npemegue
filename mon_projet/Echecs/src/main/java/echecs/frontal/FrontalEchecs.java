@@ -11,11 +11,13 @@ import ca.ntro.app.tasks.frontend.FrontendTasks;
 import echecs.frontal.evenements.EvtAfficherFileAttente;
 import echecs.frontal.evenements.EvtAfficherPartie;
 import echecs.frontal.taches.AfficherFileAttente;
+import echecs.frontal.taches.AfficherPartie;
 import echecs.frontal.taches.Initialisation;
 import echecs.frontal.taches.Navigation;
 import echecs.frontal.vues.VueParametreDeJeu;
 import echecs.frontal.vues.VueParametres;
 import echecs.frontal.vues.VueRacine;
+import echecs.frontal.vues.donnees.DonneesVuePartie;
 import echecs.frontal.vues.fragments.FragmentPolice;
 
 public class FrontalEchecs implements FrontendFx{
@@ -26,6 +28,8 @@ public class FrontalEchecs implements FrontendFx{
             Initialisation.creerTaches(tasks);
             Navigation.creerTaches(tasks);
             AfficherFileAttente.creerTaches(tasks);
+            AfficherPartie.creerTaches(tasks);
+            
 	}
 
 	@Override
@@ -57,7 +61,7 @@ public class FrontalEchecs implements FrontendFx{
         
         registrar.registerView(FragmentPolice.class, "/fragments/police.xml");
 
-        
+        registrar.registerViewData(DonneesVuePartie.class);
     }
 
 }

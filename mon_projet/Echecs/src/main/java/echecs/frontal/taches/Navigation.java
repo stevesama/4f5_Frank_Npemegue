@@ -19,25 +19,14 @@ public class Navigation {
 		.andContains(subTasks -> {
 			
 			afficherVueFileAttente(subTasks);
-			creerVuePartie(subTasks);
 			afficherVuePartie(subTasks);
 		});
 	}
 	
-	private static void creerVuePartie(FrontendTasks tasks) {
-		tasks.task(create(VueParametres.class))
-			.waitsFor(viewLoader(VueParametres.class))
-			.thenExecutesAndReturnsValue(inputs -> {
-				ViewLoader<VueParametres> viewLoader = inputs.get(viewLoader(VueParametres.class));
-				VueParametres vuePartie = viewLoader.createView();
-				return vuePartie;
-			});
-	}
 	
 	private static void afficherVuePartie(FrontendTasks tasks) {
 		tasks.task("afficherVuePartie")
 		
-			.waitsFor(created(VueParametres.class))
 			
 			.waitsFor(event(EvtAfficherPartie.class))
 			

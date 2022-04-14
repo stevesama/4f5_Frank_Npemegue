@@ -10,22 +10,13 @@ import echecs.dorsal.DorsalEchecsDistant;
 import echecs.frontal.FrontalEchecs;
 import echecs.messages.MsgAjouterPolice;
 import echecs.modeles.ModeleParametreDeJeu;
-import echecs.modeles.enums.Cadran;
 import echecs.modeles.valeurs.Parametres;
 
-public class ClientEchecs implements NtroClientFx{
+public class EchecsLocal implements NtroClientFx{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		if(args.length > 0) {
-			Session.nomPolice = args[0];
-		}
-		
-		if(args.length > 1) {
-			Session.cadran = Cadran.valueOf(args[1]);
-		}
-		
 		NtroClientFx.launch(args);
 	}
 
@@ -33,7 +24,7 @@ public class ClientEchecs implements NtroClientFx{
 	public void registerBackend(BackendRegistrar registrar) {
 		// TODO Auto-generated method stub
 		
-		registrar.registerBackend(new DorsalEchecsDistant());
+		registrar.registerBackend(new DorsalEchecs());
 	}
 
 	@Override

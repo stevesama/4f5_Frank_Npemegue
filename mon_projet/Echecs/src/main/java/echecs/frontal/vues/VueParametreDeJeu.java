@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import ca.ntro.app.NtroApp;
 import ca.ntro.app.views.ViewFx;
 import ca.ntro.core.initialization.Ntro;
+import echecs.Session;
 import echecs.frontal.evenements.EvtAfficherPartie;
 import echecs.frontal.vues.fragments.FragmentPolice;
 import echecs.messages.MsgAjouterPolice;
@@ -66,7 +67,7 @@ private void installerMsgAjouterPolice() {
 		
 		boutonAjouterPolice.setOnAction(evtFx -> {
 			
-			msgAjouterPolice.setPolice(nomAleatoire());
+			msgAjouterPolice.setPolice(Session.nomPolice);
 			msgAjouterPolice.send();
 			
 			

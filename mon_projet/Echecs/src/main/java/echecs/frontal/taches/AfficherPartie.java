@@ -35,7 +35,7 @@ public class AfficherPartie {
 
 		    	
 		    	DonneesVuePartie donneesVuePartie = inputs.get(created(DonneesVuePartie.class));
-		    	VueParametres vuePartie               = inputs.get(created(VueParametres.class));
+		    	VueParametres vuePartie          = inputs.get(created(VueParametres.class));
 		    			    	
 		    	donneesVuePartie.reagirTempsQuiPasse(tick.elapsedTime());
 		    	donneesVuePartie.afficherSur(vuePartie);

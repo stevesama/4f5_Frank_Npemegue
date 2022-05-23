@@ -58,6 +58,10 @@
 	-fx-min-height:10;
 }
 
+.petit-espace-horizontal {
+	-fx-min-width:10;
+}
+
 .grand-espace-vertical {
 	-fx-min-height:30;
 }
@@ -107,7 +111,14 @@
     -fx-background-color: transparent;
     -fx-visibility: hidden;
 }
-
-
+#positionnement {
+	-fx-alignment: center;
+}
+#positionColorPicker {
+		-fx-alignment: top-right;
+		-fx-min-height: 35;
+		-fx-font-width: 10;
+		
+}
 
 

@@ -39,6 +39,7 @@ public class AfficherPartie {
 		    			    	
 		    	donneesVuePartie.reagirTempsQuiPasse(tick.elapsedTime());
 		    	donneesVuePartie.afficherSur(vuePartie);
+
 		    });
 	}
 	

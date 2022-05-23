@@ -40,6 +40,7 @@ public class Initialisation {
 	          .thenExecutes(inputs -> {
 
 	              Window window = inputs.get(window());
+	             //window.resize(15, 20);
 
 	              window.show();
 	          });

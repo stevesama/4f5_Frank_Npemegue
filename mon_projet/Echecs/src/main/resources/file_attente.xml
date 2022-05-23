@@ -5,49 +5,110 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
 <?import javafx.scene.control.ScrollPane?>
-
-<VBox xmlns:fx="http://javafx.com/fxml"
-    fx:controller="echecs.frontal.vues.VueParametreDeJeu"
-    styleClass="conteneur"
-    id="vue-file-attente">
-    
-    
-    <Pane styleClass="petit-espace-vertical"/>
-
-    <Button
-       fx:id="boutonAjouterPolice"
-        text="%ajouterPolice"
-        styleClass="gros-bouton"
-        id="boutonAjouterPolice">
-    </Button>
-
-    <Pane VBox.vgrow="ALWAYS" styleClass="grand-espace-vertical"/>
-
-    <HBox styleClass="conteneur">
-
-         <Pane HBox.hgrow="ALWAYS" styleClass="grand-espace-horizontal"/>
-
-          <ScrollPane HBox.hgrow="ALWAYS" fitToWidth="true">
-      
-           <content>
-
-         <VBox styleClass="conteneur" fx:id="conteneurPolice" id="conteneur-police">
-         </VBox>
-           </content>
-
-           </ScrollPane>
-
-         
-         <Pane  HBox.hgrow="ALWAYS" styleClass="grand-espace-horizontal"/>
-
-     
-    </HBox>
-
-    <Pane  VBox.vgrow="ALWAYS" styleClass="grand-espace-vertical"/>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Button?>
 
 
+<VBox fx:id="backgroundColor" xmlns:fx="http://javafx.com/fxml" fx:controller="echecs.frontal.vues.VueParametreDeJeu" styleClass="conteneur" id="vue-file-attente">
 
+
+	<HBox>
+		<ColorPicker fx:id="colorpicker" id="positionColorPicker"></ColorPicker>
+		<Pane HBox.hgrow="ALWAYS" styleClass="grand-espace-horizontal" />
+
+	</HBox>
+
+	<HBox id="positionnement">
+		<Pane HBox.hgrow="ALWAYS" styleClass="grand-espace-horizontal" />
+		<Label fx:id="choixDeLaLangue" id="text" text="%choixLangue"></Label>
+		<Pane styleClass="petit-espace-horizontal" />
+		<Button fx:id="bouttonPremiereLangue" id="text" text="%premiereLangue"></Button>
+		<Pane styleClass="petit-espace-horizontal" />
+		<Button fx:id="bouttonDeuxiemeLangue" id="text" text="%deuxiemeLangue"></Button>
+		<Pane HBox.hgrow="ALWAYS" styleClass="grand-espace-horizontal" />
+
+	</HBox>
+	<Pane styleClass="petit-espace-vertical" />
+
+	<HBox id="positionnement">
+		<Pane HBox.hgrow="ALWAYS" styleClass="grand-espace-horizontal" />
+		<Label id="text" text="%choixPieces"></Label>
+		<Pane styleClass="petit-espace-horizontal" />
+		<ComboBox fx:id="piecesCombo" layoutX="15.0" layoutY="33.0" prefWidth="90.0" promptText="choose">
+			<items>
+				<FXCollections fx:factory="observableArrayList">
+					<String fx:value="Ancienne" />
+					<String fx:value="Moderne" />
+				</FXCollections>
+			</items>
+		</ComboBox>
+		<Pane HBox.hgrow="ALWAYS" styleClass="grand-espace-horizontal" />
+
+	</HBox>
+
+	<HBox id="positionnement">
+		<Pane styleClass="petit-espace-horizontal" HBox.hgrow="ALWAYS" />
+		<Label id="text" text="%AjouterNotification"></Label>
+		<Pane styleClass="petit-espace-horizontal" />
+		<CheckBox fx:id="checkbox"></CheckBox>
+		<Pane styleClass="petit-espace-horizontal" HBox.hgrow="ALWAYS" />
+
+
+	</HBox>
+
+
+	<Label text="police courante:" fx:id="apercuPolice"></Label>
+
+	<HBox id="positionnement">
+		<Pane HBox.hgrow="ALWAYS" styleClass="grand-espace-horizontal" />
+		<Label id="text" text="%choixPolice"></Label>
+		<Pane styleClass="petit-espace-horizontal" />
+		<ComboBox fx:id="policeCombo" layoutX="15.0" layoutY="33.0" prefWidth="90.0" promptText="choose">
+			<items>
+				<FXCollections fx:factory="observableArrayList">
+					<String fx:value="Arial" />
+					<String fx:value="BlackLetter" />
+					<String fx:value="Script" />
+					<String fx:value="Display" />
+				</FXCollections>
+			</items>
+		</ComboBox>
+		<Pane HBox.hgrow="ALWAYS" styleClass="grand-espace-horizontal" />
+
+	</HBox>
+
+
+	<Pane styleClass="petit-espace-vertical" />
+
+	<Button fx:id="boutonAjouterPolice" text="%ajouterPolice" styleClass="gros-bouton" id="boutonAjouterPolice"></Button>
+
+	<Pane VBox.vgrow="ALWAYS" styleClass="grand-espace-vertical" />
+
+	<HBox styleClass="conteneur">
+
+		<Pane HBox.hgrow="ALWAYS" styleClass="grand-espace-horizontal" />
+
+		<ScrollPane HBox.hgrow="ALWAYS" fitToWidth="true">
+
+			<content>
+
+				<VBox styleClass="conteneur" fx:id="conteneurPolice" id="conteneur-police"></VBox>
+			</content>
+
+		</ScrollPane>
+
+
+		<Pane HBox.hgrow="ALWAYS" styleClass="grand-espace-horizontal" />
+
+
+	</HBox>
+
+	<Pane VBox.vgrow="ALWAYS" styleClass="grand-espace-vertical" />
 
 
 </VBox>

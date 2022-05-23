@@ -19,7 +19,7 @@ public class ClientEchecs implements NtroClientFx{
 		// TODO Auto-generated method stub
 
 		if(args.length > 0) {
-			Session.nomPolice = args[0];
+			Session.nomPolice = args[0]; 
 		}
 		
 		if(args.length > 1) {
